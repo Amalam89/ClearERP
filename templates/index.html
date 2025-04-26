@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClearERP | ServiceNow Services</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f9f9f9; }
+    .hero { background-color: #0d6efd; color: white; padding: 4rem 2rem; text-align: center; }
+    .section { padding: 3rem 2rem; }
+    .cta-btn { background-color: #198754; color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1.2rem; border-radius: 0.5rem; }
+    .cta-btn:hover { background-color: #146c43; }
+    .testimonials blockquote { font-style: italic; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+
+  <header class="navbar navbar-light bg-light shadow-sm px-4 py-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <h1 class="h4 m-0 fw-bold text-primary">ClearERP</h1>
+      <span class="text-muted">ServiceNow Solutions & Automation</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Cut Your IT Ticket Times by 40% — Guaranteed.</h1>
+    <p class="lead mt-3">We deliver high-impact ServiceNow workflows — built fast by certified experts with a focus on quality, simplicity, and reliability.</p>
+    <a href="#contact" class="btn cta-btn mt-4">🔍 Claim Your Free ServiceNow Audit</a>
+  </section>
+
+  <section class="section text-center bg-white">
+    <div class="container">
+      <h3>Trusted by IT leaders and mid-sized teams</h3>
+      <p>✔ Certified Developers & Admins &nbsp;&nbsp; ✔ Designed for fast delivery and long-term stability &nbsp;&nbsp; ✔ Secure Workflow Delivery</p>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <div class="container">
+      <h2>Why ServiceNow? Why Us?</h2>
+      <p><strong>Problem:</strong> Still relying on manual workflows or outdated ticketing tools like email or spreadsheets? You’re losing valuable time, accuracy, and momentum.</p>
+      <p><strong>Promise:</strong> Our expert team reviews your current process and delivers a ready-to-deploy ServiceNow solution that enhances productivity and scales with your business.</p>
+      <ul>
+        <li>🚀 Full ITSM workflows delivered in under 10 days</li>
+        <li>✅ CMDB mapping + automation = 2x SLA compliance</li>
+        <li>💼 Proven framework for lean, reliable operations</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <h2>🎁 FREE ServiceNow Audit + $199 Workflow Setup</h2>
+      <p>Receive a live performance dashboard or optimized ticket flow — delivered in days, not weeks.</p>
+      <form id="contact" class="row g-3" action="https://formspree.io/f/mpwdzrqg" method="POST">
+        <input type="hidden" name="_replyto">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Work Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="col-md-6">
+          <label for="company" class="form-label">Company Name</label>
+          <input type="text" class="form-control" id="company" name="company" required>
+        </div>
+        <div class="col-md-6">
+          <label for="problem" class="form-label">Problem You Want to Solve</label>
+          <input type="text" class="form-control" id="problem" name="problem" required>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Book My Free Audit</button>
+        </div>
+      </form>
+      <p id="form-response" class="text-success mt-3" style="display: none;">✅ Thank you! We'll be in touch shortly.</p>
+      <script>
+        const form = document.getElementById('contact');
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          fetch("https://formspree.io/f/mpwdzrqg", {
+            method: "POST",
+            body: JSON.stringify({
+              name: form.name.value,
+              email: form.email.value,
+              company: form.company.value,
+              problem: form.problem.value
+            }),
+            headers: { "Content-Type": "application/json" }
+          }).then(response => {
+            if (response.ok) {
+              form.style.display = 'none';
+              document.getElementById('form-response').style.display = 'block';
+            }
+          });
+        });
+      </script>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <div class="container">
+      <h2>How It Works</h2>
+      <ol>
+        <li><strong>We Audit</strong> – 15-minute discovery call + workflow review</li>
+        <li><strong>We Build</strong> – Certified developers deliver your custom dashboard or automation</li>
+        <li><strong>You Scale</strong> – Expand your workflows or add ongoing support as needed</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section testimonials bg-white">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <blockquote>“We were spending 3 hours/day on ticket follow-up. After working with ClearERP, it’s all automated.” – IT Director, SaaS Company</blockquote>
+      <blockquote>"We streamlined our ticket resolution by 60% in just two weeks." – CTO, SaaS Company</blockquote>
+      <blockquote>"The ClearERP team delivered results faster and better than expected." – IT Manager, Retail Chain</blockquote>
+    </div>
+  </section>
+
+  <section class="section bg-light text-center">
+    <div class="container">
+      <h3>About ClearERP</h3>
+      <p>We’re a focused team of ServiceNow and ERP specialists dedicated to helping growing companies streamline operations through expert automation. Our approach is lean, flexible, and results-driven — no bloated proposals or delays.</p>
+      <a href="#contact" class="btn cta-btn mt-3">✅ Book a Free Workflow Audit</a>
+    </div>
+  </section>
+  
+  <footer class="bg-dark text-light text-center py-3 mt-5">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 ClearERP. All rights reserved.</p>
+      <p class="small mb-0">
+        We respect your privacy.
+        <a href="{{ url_for('privacy') }}" class="text-info text-decoration-underline">Privacy Notice</a> &nbsp;|&nbsp;
+        <a href="{{ url_for('terms') }}" class="text-info text-decoration-underline">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+  </body>
+  
+</html>
