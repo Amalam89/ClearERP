@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_from_directory
 import requests
 
 app = Flask(__name__)
@@ -29,6 +29,10 @@ def privacy():
 @app.route('/terms', methods=['GET'])
 def terms():
     return render_template('terms.html')
+
+@app.route('/favicon.png')
+def favicon():
+    return send_from_directory('static', 'favicon.png', mimetype='image/png')
 
 
 if __name__ == '__main__':
